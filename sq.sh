@@ -1,6 +1,10 @@
 #!/bin/bash
 
+
+echo 'Installing Squid server'
+
 file_location=/etc/squid/squid.conf
+export DEBIAN_FRONTEND=noninteractive
 sudo apt update
 sudo apt install squid
 rm -rf file_location
@@ -53,3 +57,7 @@ refresh_pattern .		0	20%	4320
 EOF
 
 systemctl restart squid
+
+echo '======================='
+echo 'Squid installation finished!'
+echo '======================='
